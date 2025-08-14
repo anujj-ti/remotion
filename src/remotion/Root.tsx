@@ -9,6 +9,8 @@ import {
   VIDEO_WIDTH,
 } from "../../types/constants";
 import { NextLogo } from "./MyComp/NextLogo";
+import { ScaledPictureGraphs } from "./MyComp/ScaledPictureGraphs";
+import { ChoosingTheRightScale } from "./MyComp/ChoosingTheRightScale";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -32,6 +34,22 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           outProgress: 0,
         }}
+      />
+      <Composition
+        id="ScaledPictureGraphs"
+        component={ScaledPictureGraphs}
+        durationInFrames={16 * 30} // 16 seconds at 30fps
+        fps={VIDEO_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
+      />
+      <Composition
+        id="ChoosingTheRightScale"
+        component={ChoosingTheRightScale}
+        durationInFrames={Math.round(46.479 * 30)} // Match voiceover duration (46.479s)
+        fps={VIDEO_FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
       />
     </>
   );
